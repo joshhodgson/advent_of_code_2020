@@ -16,7 +16,7 @@ m = []
 for i, b in enumerate(busses):
     if(b == "x"):
         continue
-    a.append((int(b)-i) % int(b))
+    a.append((int(b)-i))
     m.append(int(b))
 
 N = 1
