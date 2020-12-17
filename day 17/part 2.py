@@ -21,7 +21,6 @@ def countNeighbours(w, z, y, x):
 def expand():
     targetX = len(inp[0][0][0])+2
     targetY = len(inp[0][0])+2
-    targetZ = len(inp[0])+2
     for w in range(len(inp)):
         for z in range(len(inp[w])):
             for y in range(len(inp[w][z])):
@@ -30,11 +29,7 @@ def expand():
             inp[w][z].insert(0,"."*targetX)
         inp[w].append(["."*targetX]*targetY)
         inp[w].insert(0,["."*targetX]*targetY)
-
-    #inp.insert(0, [["."*targetX]*targetY]*targetZ )    < this doesn't work and I don't know why
-    #inp.append([["."*targetX]*targetY]*targetZ )    < this doesn't work and I don't know why
-
-    inp.insert(0, copy.deepcopy(inp[0]) ) # so instead copy a w dimension and empty it
+    inp.insert(0, copy.deepcopy(inp[0]) ) 
     inp.append(copy.deepcopy(inp[0]) )
     for j in [0,-1]:
         for z in range(len(inp[j])):
